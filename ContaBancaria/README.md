@@ -1,5 +1,5 @@
-# Desafio - TRILHA BÁSICA JAVA
-O objetivo deste desafio é criar o código utilizando as instruções abaixo.
+# Desafio - Trilha Básica Java
+Este repositório trata-se do desafio de código do bootcamp Santander na DIO proposto por [Gleyson Sampaio](https://github.com/glysns) cujo objetivo é criar um controle de fluxo seguindo as orientações abaixo.
 
 #### Autores
 - [Gleyson Sampaio](https://github.com/glysns)
