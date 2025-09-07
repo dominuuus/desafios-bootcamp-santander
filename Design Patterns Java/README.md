@@ -1,18 +1,53 @@
-## Getting Started
+# Library Management System
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Sistema de gerenciamento de biblioteca que demonstra a aplicação de padrões de projeto (Design Patterns) em Java.
 
-## Folder Structure
+## 📦 Padrões de Projeto Implementados
 
-The workspace contains two folders by default, where:
+### 1. Singleton
+- **Classe**: `LibraryCatalog`
+- **Propósito**: Garantir que exista apenas uma instância do catálogo da biblioteca em toda a aplicação
+- **Uso**: `LibraryCatalog.getInstance()`
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### 2. Factory Method
+- **Interface**: `ItemFactory`
+- **Implementações**: `PhysicalBookFactory`, `EBookFactory`
+- **Propósito**: Centralizar a criação de objetos e permitir extensão para novos tipos de itens
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### 3. Decorator
+- **Classe**: `SpecialEditionDecorator`
+- **Propósito**: Adicionar funcionalidades extras aos itens da biblioteca sem modificar sua estrutura base
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### 4. Observer
+- **Interface**: `Observer` (implícita)
+- **Propósito**: Notificar usuários sobre disponibilidade de livros
+- **Uso**: `registerObserver()`, `notifyObservers()`
 
-## Dependency Management
+### 5. Strategy
+- **Interface**: `BorrowStrategy`
+- **Implementações**: `StandardBorrow`, `PremiumBorrow`
+- **Propósito**: Permitir diferentes algoritmos de empréstimo intercambiáveis
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## 🚀 Como Executar
+
+```bash
+# Compilar
+javac -cp . App.java
+
+# Executar
+java App
+
+## 🏗️ Estrutura do Projeto
+
+src/
+├── App.java                 # Classe principal
+├── LibraryCatalog.java      # Singleton
+├── LibraryItem.java         # Interface base
+├── ItemFactory.java         # Factory Method
+├── PhysicalBookFactory.java # Factory concreta
+├── EBookFactory.java        # Factory concreta
+├── SpecialEditionDecorator.java # Decorator
+├── BorrowStrategy.java      # Strategy interface
+├── StandardBorrow.java      # Strategy concreta
+├── PremiumBorrow.java       # Strategy concreta
+└── User.java               # Observer
